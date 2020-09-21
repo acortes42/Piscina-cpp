@@ -9,6 +9,7 @@ class ZombieHorde
     
         ZombieHorde(int n);
         ZombieHorde(void);
+        ~ZombieHorde () {delete z;}
 
         std::string randomChump();
 

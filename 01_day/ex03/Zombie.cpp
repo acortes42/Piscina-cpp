@@ -27,10 +27,13 @@ void Zombie::announce()
     else if (x == 1)
         std::cout << "You see a undead few meters in front of you\n";
     else if (x == 2)
-        std::cout << "!A zombi surprise you from your back!\n";
+        std::cout << "¡A zombi surprise you from your back!\n";
     else if (x == 3)
         std::cout << "The smell of the dead is stronger in this zone, seems that your not alone\n";
     else if (x == 4)
         std::cout << "A blody mass of bones and flesh starts to do noises near to you\n";
-    std::cout << this->name << " the " << this->type <<" detect your presence\n\n";
+    if (this->type == "horde")
+        std::cout << this->name << ", part of a " << this->type <<", detect your presence\n\n";
+    else
+        std::cout << this->name << " the " << this->type <<" detect your presence\n\n";
 }

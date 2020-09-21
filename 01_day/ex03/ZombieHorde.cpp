@@ -42,7 +42,7 @@ ZombieHorde::ZombieHorde(int n)
     while (x < n)
     {
         z[x].name = randomChump();
-        z[x].type = "Horde";
+        z[x].type = "horde";
         z[x].announce();
         x++;
     }
