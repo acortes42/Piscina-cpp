@@ -1,17 +1,12 @@
 OBJS = main.cpp
 CFLAGS = -Wall -Wextra -Werror
-COMP = ${OBJS: .c =.o}
-
-#@clang++ -c ${CFLAGS} ${OBJS}
 
 all: ${OBJS}
 	@clang++ ${OBJS} ${CFLAGS} -o sed.out
 clean:
-	@rm -f  *.o
+	@rm -f  *.out
 fclean: clean
-	@rm -f *.o
 	@rm -f *.out
-	@rm -f pony.out
 
 re: fclear all
 

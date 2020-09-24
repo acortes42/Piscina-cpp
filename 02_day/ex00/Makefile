@@ -1,8 +1,8 @@
-OBJS = Zombie.cpp main.cpp ZombieEvent.cpp
+OBJS = Fixed.class.cpp main.cpp
 CFLAGS = -Wall -Wextra -Werror
 
 all: ${OBJS}
-	@clang++ ${OBJS} ${CFLAGS} -o zombi.out
+	@clang++ ${OBJS} ${CFLAGS} -o fixed.out
 clean:
 	@rm -f  *.out
 fclean: clean

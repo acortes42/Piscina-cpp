@@ -1,8 +1,8 @@
-OBJS = Zombie.cpp main.cpp ZombieEvent.cpp
+OBJS = FragTrap.cpp main.cpp
 CFLAGS = -Wall -Wextra -Werror
 
 all: ${OBJS}
-	@clang++ ${OBJS} ${CFLAGS} -o zombi.out
+	@clang++ ${OBJS} ${CFLAGS} -o clap.out
 clean:
 	@rm -f  *.out
 fclean: clean
