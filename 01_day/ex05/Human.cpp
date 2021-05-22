@@ -1,9 +1,10 @@
 #include "Human.hpp"
 
-brain   *human::getBrain(void)
+Human::Human()
 {
-    return (this->id);
+    brain = new Brain();
 }
 
+Human::~Human() {delete this->brain;}
 
-
+Brain       &Human::getBrain() { return (*this->brain); }

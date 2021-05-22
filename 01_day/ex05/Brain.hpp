@@ -6,15 +6,15 @@
 #include <memory>
 
 
-class brain
+class Brain
 {
     public:
 
-        brain(void);
-        ~brain(void);
+        Brain(void);
+        ~Brain(void);
 
         std::string getAdrr();
-        brain * identify(void){return this;};
+        std::string identify();
 
     private:
 

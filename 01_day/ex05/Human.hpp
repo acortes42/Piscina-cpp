@@ -3,20 +3,18 @@
 
 #include "Brain.hpp"
 
-class human
+class Human
 {
     public:
 
-        human(void);
-        ~human(void);
+        Human(void);
+        ~Human(void);
 
-        brain *getBrain(void);
-        human * identify(void){return this;};
+        Brain   &getBrain(void);
+        std::string identify(void){return this->getBrain().identify();};
 
     private:
-        brain &brain;
-
+        Brain *brain;
 };
-
 
 #endif

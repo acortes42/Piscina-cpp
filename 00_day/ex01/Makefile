@@ -1,18 +1,24 @@
-OBJS = iCrap.cpp
-CFLAGS = -Wall -Wextra -Werror
-COMP = ${OBJS: .c =.o}
+SRCS 			= iCrap.cpp
 
-#@clang++ -c ${CFLAGS} ${OBJS}
+OBJS			= $(SRCS:.cpp=.o)
 
-all: ${OBJS}
-	@clang++ ${OBJS} -o iCrap
+COMP			= clang++
+
+RM 				= rm -f
+
+FLAGS 			= -Wall -Wextra -Werror -fsanitize=address  -I.
+
+NAME			=	iCrap
+
+all:			$(NAME)
+
+$(NAME):		$(OBJS)
+				$(COMP) $(FLAGS) -o $(NAME) $(OBJS)
 clean:
-	@rm -f  *.o
-fclean: clean
-	@rm -f *.o
-	@rm -f *.out
-	@rm -f megaphone
+				$(RM) $(OBJS)
+fclean:			clean
+				$(RM) $(NAME)
 
-re: fclear all
+re:				fclean $(NAME)
 
-PHONY: all clean fclean re
+.PHONY:			all clean fclean re

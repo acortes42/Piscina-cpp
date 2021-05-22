@@ -4,9 +4,8 @@
 
 int main()
 {
-    human   b1;
+  Human bob;
 
-    std::cout <<"Human say: " << b1.identify() << std::endl;
-  //  std::cout << b1.getBrain().identify() << std::endl;
-    return (1);
+  std::cout << bob.identify() << std::endl;
+  std::cout << bob.getBrain().identify() << std::endl;
 }

@@ -1,23 +1,14 @@
 #include "Brain.hpp"
+#include <sstream>
 
-brain::brain(void)
+Brain::Brain() {}
+
+Brain::~Brain() {}
+
+std::string Brain::identify()
 {
-    return ;
+    std::stringstream address;
+    address << this;
+
+    return (address.str());
 }
-
-brain::~brain(void)
-{
-    return ;
-}
-
-/*
-std::string brain::getAdrr()
-{
-    return (this->id);
-}
-
-
-std::string brain::identify()
-{
-    return (this->id);
-}*/
