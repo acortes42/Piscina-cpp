@@ -5,18 +5,19 @@
 
 int main( void ) 
 {
+    std::cout << _GREEN;
     /*
     FlagTrap    a;
     ScavTrap    b;
     NinjaTrap   nin;
     */
     SuperTrap   hero;
-
+    
 //    std::string enemy1;
-    std::string enemy2;
+//    std::string enemy2;
 
 //    enemy1 = a.randomName();
-    enemy2 = hero.randomName();
+ //   enemy2 = hero.randomName();
 /*    a.takeDamage(30);
     a.takeDamage(50);
     a.beRepaired(10000000);
@@ -25,6 +26,7 @@ int main( void )
     nin.ninjaShoebox(a);
     nin.ninjaShoebox(b);
     nin.ninjaShoebox(nin);*/
-    hero.challengeNewcomer(enemy2);
+ //   hero.challengeNewcomer(enemy2);
+    std::cout << _RED;
     return (1);
 }
