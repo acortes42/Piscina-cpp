@@ -31,7 +31,7 @@ class Fixed
         ~Fixed(void);
         Fixed(const Fixed &cpy);
 
-        Fixed           operator = (const Fixed &arg);
+        Fixed           &operator = (const Fixed &arg);
 
 
         int             getRawBits(void);

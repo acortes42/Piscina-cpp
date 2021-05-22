@@ -3,21 +3,21 @@
 Fixed::Fixed(void)
 {
     this->value = 0;
-    std::cout << "Constructor started to work\n";
+    std::cout << "Constructor started\n";
     return ;
 };
 
 Fixed::Fixed(const int x)
 {
     this->value = (x << Fixed::fractValue);
-    std::cout << "Constructor started to work\n";
+    std::cout << "Constructor started\n";
     return ;
 };
 
 Fixed::Fixed(const float x)
 {
     this->value = std::roundf(x * (1 << Fixed::fractValue));
-    std::cout << "Constructor started to work\n";
+    std::cout << "Constructor started\n";
     return ;
 };
 
@@ -34,20 +34,11 @@ Fixed::Fixed(const Fixed &cpy)
     return ;
 };
 
-Fixed Fixed::operator = (const Fixed &arg)
+Fixed &Fixed::operator = (const Fixed &other)
 {
-    this->value
     std::cout << "Asignation is done" << std::endl;
-    return (tmp);
-};
-
-Fixed operator + (const Fixed &op1, const Fixed &op2)
-{    
-    Fixed ret(*this);
-
-    op1. = arg.value;
-    std::cout << "Asignation is done" << std::endl;
-    return (tmp);
+    this->value = other.value;
+    return (*this);
 };
 
 std::ostream &operator<<(std::ostream &out, Fixed const &value)
