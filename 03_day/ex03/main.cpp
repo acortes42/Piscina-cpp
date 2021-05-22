@@ -11,6 +11,7 @@ int main( void )
     std::string enemy1;
     std::string enemy2;
 
+    std::cout << _GREEN;
     enemy1 = a.randomName();
     enemy2 = b.randomName();
     a.takeDamage(30);
@@ -21,5 +22,6 @@ int main( void )
     nin.ninjaShoebox(a);
     nin.ninjaShoebox(b);
     nin.ninjaShoebox(nin);
+    std::cout << _RED;
     return (1);
 }

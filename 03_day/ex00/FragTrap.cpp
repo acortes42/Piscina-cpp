@@ -73,7 +73,7 @@ FlagTrap::FlagTrap(const FlagTrap &other)
 
 FlagTrap::~FlagTrap(void)
 {
-    std::cout << "FR4G-TP " << this->name << " has been transfered to a better place. Or has been destroyed. Nevermind, who cares about that things?" << std::endl;
+    std::cout << "FR4G-TP " << this->name << " has been transfered to a better place or it's trapped in a eternal pain" << std::endl;
     return;
 }
 

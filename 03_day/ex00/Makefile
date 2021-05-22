@@ -1,13 +1,24 @@
-OBJS = FragTrap.cpp main.cpp
-CFLAGS = -Wall -Wextra -Werror
+SRCS			= FragTrap.cpp main.cpp
+OBJS			= $(SRCS:.cpp=.o)
 
-all: ${OBJS}
-	@clang++ ${OBJS} ${CFLAGS} -o clap.out
+COMP			= clang++
+
+RM 				= rm -f
+
+FLAGS 			= -Wall -Wextra -Werror -fsanitize=address  -I.
+
+NAME			= fagtrap
+
+all:			$(NAME)
+
+$(NAME):		$(OBJS)
+				$(COMP) $(FLAGS) -o $(NAME) $(OBJS)
 clean:
-	@rm -f  *.out
-fclean: clean
-	@rm -f *.out
+				$(RM) $(OBJS)
+fclean:			clean
+				$(RM) $(NAME)
 
-re: fclear all
+re:				fclean $(NAME)
 
-PHONY: all clean fclean re
+.PHONY:			all clean fclean re
+
