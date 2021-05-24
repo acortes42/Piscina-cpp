@@ -1,15 +1,9 @@
 #include "Peon.hpp"
 
-Peon::Peon(void)
+Peon::Peon(std::string const & name) : Victim(name)
 {
-    this->name = Peon::randomName();
-    std::cout << "Some random Peon called " << this->getName() << " just appeared!" << std::endl;
-}
-
-Peon::Peon(std::string name)
-{
-    this->name = name;
-    std::cout << "Some random Peon called " << this->getName() << " just appeared!" << std::endl;
+    std::cout << "\nOH, NICE DAY FOR A WALK!!!\n" << std::endl;
+    return ;
 }
 
 Peon::Peon(const Peon &other)
@@ -20,6 +14,5 @@ Peon::Peon(const Peon &other)
 
 Peon::~Peon(void)
 {
-    std::cout << "Peon " << this->getName() << " just died for no apparent reason!" << std::endl;
     return;
 }

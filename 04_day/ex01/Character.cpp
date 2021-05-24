@@ -2,8 +2,9 @@
 
 Character::Character()
 {
-    this->name = std::string();
-    this->ap = 0;
+    this->name = "random guy";
+    this->ap = 40;
+    this->weapon = NULL;
     return ;
 }
 
@@ -11,6 +12,7 @@ Character::Character(std::string const & name)
 {
     this->name = name;
     this->ap = 40;
+    this->weapon = NULL;
     return ;
 }
 
@@ -37,9 +39,9 @@ int Character::getAP(void) const
 
 std::string Character::getWeapon(void) const
 {
-    if (this->weapon)
+    if (this->weapon != NULL)
 	    return (this->weapon->getName());
-    return ("nothing");
+    return ("rock");
 }
 
 void Character::recoverAP()

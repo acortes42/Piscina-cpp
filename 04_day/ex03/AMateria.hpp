@@ -14,10 +14,11 @@ class AMateria
 
         std::string const & getType() const;
         unsigned int getXP() const;
+        
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
 
-    private:
+    protected:
         unsigned int xp;
         std::string  type;
         int          inSlots;

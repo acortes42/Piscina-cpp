@@ -3,12 +3,12 @@
 
 #include "Victim.hpp"
 
-class Peon: virtual public Victim
+class Peon: public Victim
 {
     public:
 
         Peon(void);
-        Peon(std::string name);
+        Peon(std::string const & name);
         ~Peon(void);
         Peon(const Peon &cpy);
 

@@ -71,7 +71,6 @@ void Character::equip(AMateria* m)
         }
         x++;
     }
-    std::cout << x << std::endl;
     this->magicSlots[x] = m;
     this->usedSlots++;
 }

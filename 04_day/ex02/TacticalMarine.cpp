@@ -3,6 +3,7 @@
 TacticalMarine::TacticalMarine(void)
 {
     std::cout << "Tactical Marine ready for battle!" << std::endl;
+    std::cout << "* teleports from space *" << std::endl;
     return;
 }   
 

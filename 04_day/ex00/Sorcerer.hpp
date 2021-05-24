@@ -3,7 +3,7 @@
 
 # include "Victim.hpp"
 
-class Sorcerer: virtual public Victim
+class Sorcerer
 {
     public:
 
@@ -13,8 +13,11 @@ class Sorcerer: virtual public Victim
         ~Sorcerer(void);
         Sorcerer(const Sorcerer &cpy);
 
-        std::string const   &getTitle();
+        std::string const   &getTitle() const;
         virtual void polymorph(Victim const &vict) const;
+        std::string         randomName();
+        std::string const   &getName()const;
+        int                 randomBuilder() const;;
 
 
 
@@ -24,5 +27,7 @@ class Sorcerer: virtual public Victim
         std::string name;
         std::string title;
 };
+
+std::ostream &	operator<<(std::ostream & ost, Sorcerer const & rhs);
 
 #endif

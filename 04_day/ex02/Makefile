@@ -1,14 +1,26 @@
-OBJS = AssaultTerminator.cpp main.cpp Squad.cpp  TacticalMarine.cpp
+SRCS			= AssaultTerminator.cpp main.cpp Squad.cpp  TacticalMarine.cpp
 
-CFLAGS = -Wall -Wextra -Werror
+OBJS			= $(SRCS:.cpp=.o)
 
-all: ${OBJS}
-	@clang++ ${OBJS} ${CFLAGS} -o hammer.out
+COMP			= clang++
+
+RM 				= rm -f
+
+FLAGS 			= -Wall -Wextra -Werror -fsanitize=address  -I.
+
+NAME			= hammer
+
+all:			$(NAME)
+
+$(NAME):		$(OBJS)
+				$(COMP) $(FLAGS) -o $(NAME) $(OBJS)
 clean:
-	@rm -f  *.out
-fclean: clean
-	@rm -f *.out
+				$(RM) $(OBJS)
+fclean:			clean
+				$(RM) $(NAME)
 
-re: fclear all
+re:				fclean $(NAME)
 
-PHONY: all clean fclean re
+.PHONY:			all clean fclean re
+
+

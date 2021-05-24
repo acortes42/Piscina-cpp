@@ -74,9 +74,19 @@ std::string Victim::introduce() const
     return (str[x]);
 }
 
+std::string Victim::change() const
+{
+    unsigned int x;
+    std::string str[] = {"cute little sheep", "better person", "corpse", "little girl", "cat", "guy called Brian"};
+
+    srand (this->randomBuilder());
+    x = std::rand() % 6;
+    return (str[x]);
+}
+
 void Victim::getPolymorphed()const
 {
-    std::cout << this->name << " has been turned into a cute little sheep !" << std::endl;
+    std::cout << this->name << " has been turned into a " << this->change() << "!" << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, Victim const &sorcerer)

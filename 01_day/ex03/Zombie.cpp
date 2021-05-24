@@ -31,7 +31,7 @@ void Zombie::announce()
     else if (x == 3)
         std::cout << "The smell of the dead is stronger in this zone, seems that your not alone\n";
     else if (x == 4)
-        std::cout << "A blody mass of bones and flesh starts to do noises near to you\n";
+        std::cout << "A bloody mass of bones and flesh appear near to you\n";
     if (this->type == "horde")
         std::cout << this->name << ", part of a " << this->type <<", detect your presence\n\n";
     else

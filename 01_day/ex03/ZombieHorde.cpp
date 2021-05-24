@@ -38,6 +38,8 @@ ZombieHorde::ZombieHorde(int n)
     int     x;
 
     x = 0;
+    if (n < 0)
+        return;
     this->z = new Zombie[n];
     while (x < n)
     {

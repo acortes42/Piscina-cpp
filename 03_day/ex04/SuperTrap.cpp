@@ -2,21 +2,9 @@
 #include "NinjaTrap.hpp"
 #include "FragTrap.hpp"
 
-SuperTrap::SuperTrap(void)
+SuperTrap::SuperTrap(void): NinjaTrap()
 {
-    ClapTrap    cla;
-    FlagTrap    flag;
-    NinjaTrap   nin;
-
-    this->hitPoints = flag.getHitPoints();
-    this->maxHitPoints = flag.getMaxHitPoints();
-    this->energyPoints = nin.getEnergyPoints();
-    this->maxEnergyPoints = nin.getMaxEnergyPoints();
-    this->level = 1;
-    this->name = cla.getName();
-    this->meleAttackDmg = nin.getMeelePoints();
-    this->rangedAttackDmg = flag.getRangedPoints();
-    this->armorDamageReduction = flag.getArmorReduction();
+    this->name = this->getName();
     std::cout << this->name << ", the SuperTrap has been created. Another one, another problem." << std::endl;
 }
 
