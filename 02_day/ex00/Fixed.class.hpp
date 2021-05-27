@@ -1,9 +1,14 @@
-#ifndef  FIXED_CLASS_HPP
-#define FIXED_CLASS_HPP
-
-#include <iostream>
-#include <string>
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/27 13:16:25 by acortes-          #+#    #+#             */
+/*   Updated: 2021/05/27 14:08:24 by acortes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 
@@ -21,15 +26,21 @@ class A final
 
 */
 
+#ifndef  FIXED_CLASS_HPP
+#define FIXED_CLASS_HPP
+
+#include <iostream>
+#include <string>
+
 class Fixed
 {
     public:
         Fixed(void);
         ~Fixed(void);
-        Fixed(const Fixed &cpy);
-        Fixed   operator = (const Fixed &arg);
-        int           getRawBits(void);
-        void          setRawBits(int const bits);
+        Fixed(const Fixed &other);
+        Fixed   &operator = (const Fixed &other);
+        int           getRawBits(void) const;
+        void          setRawBits(int const raw);
 
 
     private:

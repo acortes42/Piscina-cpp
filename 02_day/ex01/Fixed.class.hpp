@@ -1,9 +1,14 @@
-#ifndef  FIXED_CLASS_HPP
-#define FIXED_CLASS_HPP
-
-#include <iostream>
-#include <cmath>
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/27 14:02:15 by acortes-          #+#    #+#             */
+/*   Updated: 2021/05/27 14:07:15 by acortes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 
@@ -21,6 +26,12 @@ class A final
 
 */
 
+#ifndef  FIXED_CLASS_HPP
+#define FIXED_CLASS_HPP
+
+#include <iostream>
+#include <cmath>
+
 class Fixed
 {
     public:
@@ -29,12 +40,11 @@ class Fixed
         Fixed(const float x);
         
         ~Fixed(void);
-        Fixed(const Fixed &cpy);
+        Fixed(const Fixed &other);
+        Fixed   &operator = (const Fixed &other);
 
-        Fixed           &operator = (const Fixed &arg);
 
-
-        int             getRawBits(void);
+        int             getRawBits(void) const;
         void            setRawBits(int const bits);
         int             toInt(void) const;
         float           toFloat(void) const;
@@ -44,9 +54,6 @@ class Fixed
         int                 value;
         static const int    fractValue = 8;
 };
-
-// First I try to put this into the public function in Fixed, but seems that I need to use "friend"
-//  for this. It's a forbiden function in this exercise, so here is the overloading.
 
 std::ostream&   operator<<(std::ostream &os, Fixed const &arg);
 

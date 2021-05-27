@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.class.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/27 13:16:14 by acortes-          #+#    #+#             */
+/*   Updated: 2021/05/27 14:08:28 by acortes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.class.hpp"
 
 Fixed::Fixed(void)
@@ -9,37 +21,35 @@ Fixed::Fixed(void)
 
 Fixed::~Fixed(void)
 {
-    std::cout << "Destructor doing a hard but honest work\n";
+    std::cout << "Destructor called\n";
     return ;
 };
 
-// falla la copia
-
-Fixed::Fixed   (const Fixed &cpy)
+Fixed::Fixed   (const Fixed &other)
 {
-    this->value = cpy.value;
+    this->value = other.getRawBits();
     std::cout << "A copy of the object has been created\n";
     return ;
 };
 
-Fixed Fixed::operator = (const Fixed &arg)
-{
-    Fixed tmp;
-    
-    tmp.value = arg.value;
+Fixed &Fixed::operator = (const Fixed &other)
+{   
     std::cout << "Asignation is done" << std::endl;
-    return (tmp);
+    if (this == &other)
+        return (*this);
+    this->value = other.getRawBits();
+    return (*this);
 };
 
-int       Fixed::getRawBits()
+int       Fixed::getRawBits() const
 {
     std::cout << "getRawBits member function called" << std::endl;
     return (this->value);
 };
 
-void    Fixed::setRawBits(int const bits)
+void    Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called" << std::endl;
-    this->value = bits;
+    this->value = raw;
     return ;
 };

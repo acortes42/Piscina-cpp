@@ -23,18 +23,20 @@ Fixed::~Fixed(void)
     return ;
 };
 
-Fixed::Fixed(const Fixed &cpy)
+Fixed::Fixed   (const Fixed &other)
 {
-    this->value = cpy.getRawBits();
+    this->value = other.getRawBits();
+    std::cout << "A copy of the object has been created\n";
     return ;
 };
 
-Fixed Fixed::operator = (const Fixed &other)
-{
-    Fixed tmp;
-    
-    tmp.value = other.value;
-    return (tmp);
+Fixed &Fixed::operator = (const Fixed &other)
+{   
+    std::cout << "Asignation is done" << std::endl;
+    if (this == &other)
+        return (*this);
+    this->value = other.getRawBits();
+    return (*this);
 };
 
 Fixed Fixed::operator + (const Fixed &other)
@@ -139,7 +141,7 @@ std::ostream &operator<<(std::ostream &out, Fixed const &value)
     return (out);
 }
 
-int       Fixed::getRawBits()const
+int       Fixed::getRawBits() const
 {
     return (this->value);
 };
@@ -152,9 +154,7 @@ void    Fixed::setRawBits(int const bits)
 
 int     Fixed::toInt(void) const
 {
-
-    //return (this->value / pow(2, Fixed::fractValue));
-    return (this->value >> Fixed::fractValue);
+    return (this->value);
 }
 
 float   Fixed::toFloat(void) const

@@ -1,9 +1,14 @@
-#ifndef  FIXED_CLASS_HPP
-#define FIXED_CLASS_HPP
-
-#include <iostream>
-#include <cmath>
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.class.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/27 14:09:59 by acortes-          #+#    #+#             */
+/*   Updated: 2021/05/27 15:16:17 by acortes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 
@@ -21,12 +26,20 @@ class A final
 
 */
 
+#ifndef  FIXED_CLASS_HPP
+#define FIXED_CLASS_HPP
+
+#include <iostream>
+#include <cmath>
+
 class Fixed
 {
     public:
         Fixed(void);
         Fixed(const int x);
         Fixed(const float x);
+        Fixed(const Fixed &other);
+
         int                 getRawBits(void) const;
         void                setRawBits(int const bits);
         int                 toInt(void) const;
@@ -37,9 +50,8 @@ class Fixed
         static Fixed        &max(Fixed &f1, Fixed &f2);
         
         ~Fixed(void);
-        Fixed(const Fixed &cpy);
 
-        Fixed           operator = (const Fixed &arg);
+        Fixed           &operator = (const Fixed &other);
         Fixed           operator + (const Fixed &args);
         Fixed           operator - (const Fixed &args);
         Fixed           operator * (const Fixed &args);
@@ -54,9 +66,8 @@ class Fixed
         Fixed           operator ++ (int);
         Fixed           operator -- ();
         Fixed           operator ++ ();
-
     private:
-        int                 value;
+        float                 value;
         static const int    fractValue = 8;
 };
 
