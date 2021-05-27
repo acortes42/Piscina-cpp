@@ -11,7 +11,8 @@ class HumanA
 
         std::string getName(void);
         std::string getWeapon(void);
-        void    attack();
+        void        setWeapon(std::string weapon);
+        void        attack();
 
     private:
         std::string name;

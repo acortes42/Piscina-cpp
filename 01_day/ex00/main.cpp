@@ -7,6 +7,7 @@ void    ponyOnTheHeap()
     sky = new Pony();
     sky->ponyInfo("Sky", "White", "7", "Female", "6500");
     sky->getAllInfo();
+    delete(sky);
 }
 
 void    ponyOnTheStack()

@@ -2,19 +2,19 @@
 
 int main()
 {
-    std::cout << _GREEN;
-    Weapon  club("crude spiked club");
-    Weapon  noWeapon = Weapon("puppy");
-    Weapon  copy_club = club;
-
-    HumanA Warrior("Warrior Gru", copy_club);
-    HumanB Mague("Bloddy Harry", noWeapon);
-
-    Warrior.attack();
-    Mague.attack();
-    copy_club.setType("rock while cry");
-    Warrior.attack();
-    Mague.attack();
-    std::cout << _RESET;
-    return (1);
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
 }

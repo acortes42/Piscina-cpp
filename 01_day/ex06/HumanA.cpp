@@ -20,3 +20,8 @@ std::string HumanA::getWeapon()
 {
     return (this->weapon.getType());
 }
+
+void HumanA::HumanA::setWeapon(std::string weapon)
+{
+    this->weapon = weapon;
+}
