@@ -65,8 +65,29 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    *this = other;
-    return ;
+    this->hitPoints = other.hitPoints;
+    this->maxHitPoints = other.maxHitPoints;
+    this->energyPoints = other.energyPoints;
+    this->maxEnergyPoints = other.maxEnergyPoints;
+    this->level = other.level;
+    this->name = other.name;
+    this->meleAttackDmg = other.meleAttackDmg;
+    this->rangedAttackDmg = other.rangedAttackDmg;
+    this->armorDamageReduction = other.armorDamageReduction;
+}
+
+
+ClapTrap &ClapTrap::operator = (const ClapTrap &other)
+{
+    this->hitPoints = other.hitPoints;
+    this->maxHitPoints = other.maxHitPoints;
+    this->energyPoints = other.energyPoints;
+    this->maxEnergyPoints = other.maxEnergyPoints;
+    this->level = other.level;
+    this->meleAttackDmg = other.meleAttackDmg;
+    this->rangedAttackDmg = other.rangedAttackDmg;
+    this->armorDamageReduction = other.armorDamageReduction;
+    return (*this);
 }
 
 ClapTrap::~ClapTrap(void)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/28 14:32:16 by acortes-          #+#    #+#             */
+/*   Updated: 2021/05/28 14:32:17 by acortes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FLAGTRAP_HPP
 #define FLAGTRAP_HPP
 
@@ -22,11 +34,11 @@ class FlagTrap
         ~FlagTrap(void);
         FlagTrap(const FlagTrap &cpy);
 
-       // FlagTrap     operator = (const FlagTrap &arg);
+        FlagTrap   &operator = (const FlagTrap &other);
         unsigned int rangedAttack(std::string const & target);
         unsigned int meleeAttack(std::string const & target);
-        unsigned int takeDamage(unsigned int amount);
-        unsigned int beRepaired(unsigned int amount);
+        unsigned int takeDamage(int amount);
+        unsigned int beRepaired(int amount);
         unsigned int vaulthunter_dot_exe(std::string const & target);
         int randomGenerator();
         std::string randomName();

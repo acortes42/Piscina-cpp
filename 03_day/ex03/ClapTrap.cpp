@@ -65,8 +65,29 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    *this = other;
-    return ;
+    this->hitPoints = other.hitPoints;
+    this->maxHitPoints = other.maxHitPoints;
+    this->energyPoints = other.energyPoints;
+    this->maxEnergyPoints = other.maxEnergyPoints;
+    this->level = other.level;
+    this->name = other.name;
+    this->meleAttackDmg = other.meleAttackDmg;
+    this->rangedAttackDmg = other.rangedAttackDmg;
+    this->armorDamageReduction = other.armorDamageReduction;
+}
+
+
+ClapTrap &ClapTrap::operator = (const ClapTrap &other)
+{
+    this->hitPoints = other.hitPoints;
+    this->maxHitPoints = other.maxHitPoints;
+    this->energyPoints = other.energyPoints;
+    this->maxEnergyPoints = other.maxEnergyPoints;
+    this->level = other.level;
+    this->meleAttackDmg = other.meleAttackDmg;
+    this->rangedAttackDmg = other.rangedAttackDmg;
+    this->armorDamageReduction = other.armorDamageReduction;
+    return (*this);
 }
 
 ClapTrap::~ClapTrap(void)
@@ -84,6 +105,21 @@ unsigned int ClapTrap::rangedAttack(std::string const & target)
     }
     std::cout << this->name << " attacks " << target << " at range, causing "<< this->rangedAttackDmg << " points of damage!" << std::endl;
     return (this->rangedAttackDmg);
+}
+
+int ClapTrap::getMeleeAttack()
+{
+    return (this->meleAttackDmg);
+}
+
+int ClapTrap::getRangedAttack()
+{
+    return (this->rangedAttackDmg);
+}
+
+std::string ClapTrap::getName()
+{
+    return (this->name);
 }
 
 unsigned int ClapTrap::meleeAttack(std::string const & target)
@@ -135,9 +171,4 @@ unsigned int ClapTrap::beRepaired(unsigned int restauration)
     std::cout << this->name << " is repaired for " << restauration << " hit points." << std::endl;
     this->hitPoints += restauration;
     return (this->hitPoints);
-}
-
-std::string const &ClapTrap::getName(void)
-{
-	return (this->name);
 }

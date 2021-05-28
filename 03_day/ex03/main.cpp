@@ -4,6 +4,7 @@
 
 int main( void ) 
 {
+    std::cout << _CYAN;
     FlagTrap    a;
     ScavTrap    b;
     NinjaTrap   nin;
@@ -14,7 +15,7 @@ int main( void )
     std::cout << _GREEN;
     enemy1 = a.randomName();
     enemy2 = b.randomName();
-    a.takeDamage(30);
+    a.takeDamage(-80);
     a.takeDamage(50);
     a.beRepaired(10000000);
     a.vaulthunter_dot_exe(enemy1);

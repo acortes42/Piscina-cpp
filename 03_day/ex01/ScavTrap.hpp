@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/28 14:32:36 by acortes-          #+#    #+#             */
+/*   Updated: 2021/05/28 14:33:26 by acortes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
@@ -13,7 +25,6 @@
 # define _CYAN    "\x1b[36m"
 # define _RESET   "\x1b[0m"
 
-
 class ScavTrap
 {
     public:
@@ -23,7 +34,7 @@ class ScavTrap
         ~ScavTrap(void);
         ScavTrap(const ScavTrap &cpy);
 
-       // ScavTrap     operator = (const ScavTrap &arg);
+        ScavTrap     &operator = (const ScavTrap &other);
         unsigned int rangedAttack(std::string const & target);
         unsigned int meleeAttack(std::string const & target);
         unsigned int takeDamage(unsigned int amount);

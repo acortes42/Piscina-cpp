@@ -3,6 +3,7 @@
 
 int main( void ) 
 {
+    std::cout << _CYAN;
     FlagTrap a;
     ScavTrap b;
     std::string enemy1;

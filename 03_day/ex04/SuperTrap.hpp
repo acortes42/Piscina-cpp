@@ -5,7 +5,7 @@
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
 
-class SuperTrap: virtual public ClapTrap, virtual public NinjaTrap
+class SuperTrap: virtual public FlagTrap, virtual public NinjaTrap
 {
     public:
 
@@ -14,7 +14,7 @@ class SuperTrap: virtual public ClapTrap, virtual public NinjaTrap
         ~SuperTrap(void);
         SuperTrap(const SuperTrap &cpy);
 
-       // SuperTrap     operator = (const SuperTrap &arg);
+        SuperTrap     &operator = (const SuperTrap &arg);
 
     private:
 

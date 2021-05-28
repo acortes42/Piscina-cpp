@@ -5,6 +5,7 @@
 #include <string>
 #include <sys/time.h>
 
+
 # define _RED     "\x1b[31m"
 # define _GREEN   "\x1b[32m"
 # define _YELLOW  "\x1b[33m"
@@ -22,13 +23,16 @@ class ClapTrap
         ~ClapTrap(void);
         ClapTrap(const ClapTrap &cpy);
 
+        ClapTrap   &operator = (const ClapTrap &other);
         unsigned int rangedAttack(std::string const & target);
         unsigned int meleeAttack(std::string const & target);
         unsigned int takeDamage(unsigned int amount);
         unsigned int beRepaired(unsigned int amount);
+        std::string  getName(void);
+        int          getMeleeAttack();
+        int          getRangedAttack();
         int          randomBuilder();
         std::string  randomName();
-        std::string const &getName(void);
 
 
     protected:

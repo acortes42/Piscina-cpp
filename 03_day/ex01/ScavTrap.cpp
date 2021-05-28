@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acortes- <acortes-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/28 14:32:33 by acortes-          #+#    #+#             */
+/*   Updated: 2021/05/28 18:09:31 by acortes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
@@ -66,8 +78,29 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::ScavTrap(const ScavTrap &other)
 {
-    *this = other;
-    return ;
+    this->hitPoints = other.hitPoints;
+    this->maxHitPoints = other.maxHitPoints;
+    this->energyPoints = other.energyPoints;
+    this->maxEnergyPoints = other.maxEnergyPoints;
+    this->level = other.level;
+    this->name = other.name;
+    this->meleAttackDmg = other.meleAttackDmg;
+    this->rangedAttackDmg = other.rangedAttackDmg;
+    this->armorDamageReduction = other.armorDamageReduction;
+    std::cout << this->name << ", the ScavTrap, has been created. Another one, another problem." << std::endl;
+}
+
+ScavTrap &ScavTrap::operator = (const ScavTrap &other)
+{
+    this->hitPoints = other.hitPoints;
+    this->maxHitPoints = other.maxHitPoints;
+    this->energyPoints = other.energyPoints;
+    this->maxEnergyPoints = other.maxEnergyPoints;
+    this->level = other.level;
+    this->meleAttackDmg = other.meleAttackDmg;
+    this->rangedAttackDmg = other.rangedAttackDmg;
+    this->armorDamageReduction = other.armorDamageReduction;
+    return (*this);
 }
 
 ScavTrap::~ScavTrap(void)

@@ -14,12 +14,13 @@ class NinjaTrap: virtual public ClapTrap
         ~NinjaTrap(void);
         NinjaTrap(const NinjaTrap &cpy);
 
-       // NinjaTrap     operator = (const NinjaTrap &arg);
-
+        NinjaTrap     &operator = (const NinjaTrap &other);
         unsigned int    ninjaShoebox(ClapTrap &target);
         unsigned int    ninjaShoebox(FlagTrap &target);
 	    unsigned int    ninjaShoebox(ScavTrap &trap);
 	    unsigned int    ninjaShoebox(NinjaTrap &trap);
+        int          randomGenerator();
+        std::string  randomName();
         
 
     private:

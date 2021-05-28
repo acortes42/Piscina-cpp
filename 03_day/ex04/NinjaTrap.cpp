@@ -30,8 +30,28 @@ NinjaTrap::NinjaTrap(std::string name)
 
 NinjaTrap::NinjaTrap(const NinjaTrap &other)
 {
-    *this = other;
-    return ;
+    this->hitPoints = other.hitPoints;
+    this->maxHitPoints = other.maxHitPoints;
+    this->energyPoints = other.energyPoints;
+    this->maxEnergyPoints = other.maxEnergyPoints;
+    this->level = other.level;
+    this->name = other.name;
+    this->meleAttackDmg = other.meleAttackDmg;
+    this->rangedAttackDmg = other.rangedAttackDmg;
+    this->armorDamageReduction = other.armorDamageReduction;
+}
+
+NinjaTrap &NinjaTrap::operator = (const NinjaTrap &other)
+{
+    this->hitPoints = other.hitPoints;
+    this->maxHitPoints = other.maxHitPoints;
+    this->energyPoints = other.energyPoints;
+    this->maxEnergyPoints = other.maxEnergyPoints;
+    this->level = other.level;
+    this->meleAttackDmg = other.meleAttackDmg;
+    this->rangedAttackDmg = other.rangedAttackDmg;
+    this->armorDamageReduction = other.armorDamageReduction;
+    return (*this);
 }
 
 NinjaTrap::~NinjaTrap(void)
@@ -86,7 +106,7 @@ unsigned int    NinjaTrap::ninjaShoebox(FlagTrap &target)
         if (randomNum > 4)
         {
             std::cout << ", almost killing the enemy" << std::endl;
-            target.takeDamage(this->rangedAttack(target.getName()) * 2);
+            target.takeDamage(this->getRangedAttack());
         }
         else
             std::cout << ", but fails." << std::endl;
@@ -152,3 +172,38 @@ unsigned int    NinjaTrap::ninjaShoebox(NinjaTrap &target)
         std::cout << this->name << " it's tired of do all the hard work"<< std::endl;
     return (1);
 }
+
+int NinjaTrap::randomGenerator()
+{
+    struct timeval  tv1;
+    gettimeofday(&tv1, NULL);
+    return(tv1.tv_usec);
+}
+
+std::string NinjaTrap::randomName()
+{
+    int         n1;
+    int         n2;
+    int         n3;
+    std::string vocals;
+    std::string consonants;
+    std::string ret;
+
+    vocals = "aeiou";
+    consonants = "qwrtypsdfghjklzxcvbnm";
+    ret = "";
+    srand (randomGenerator());
+    n3 = std::rand() % 4 + 3;
+    while (n3 > 0)
+    {
+        n1 = std::rand() % vocals.length();
+        n2 = std::rand() % consonants.length();
+        if (n3 % 2 == 0)
+            ret += vocals[n1];
+        else
+            ret += consonants[n2];
+        n3--;
+    }
+    ret[0] = toupper(ret[0]);
+    return (ret);
+};

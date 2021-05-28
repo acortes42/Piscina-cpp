@@ -23,6 +23,7 @@ class ClapTrap
         ~ClapTrap(void);
         ClapTrap(const ClapTrap &cpy);
 
+        ClapTrap   &operator = (const ClapTrap &other);
         unsigned int rangedAttack(std::string const & target);
         unsigned int meleeAttack(std::string const & target);
         unsigned int takeDamage(unsigned int amount);

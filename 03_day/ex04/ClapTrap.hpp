@@ -5,6 +5,15 @@
 #include <string>
 #include <sys/time.h>
 
+
+# define _RED     "\x1b[31m"
+# define _GREEN   "\x1b[32m"
+# define _YELLOW  "\x1b[33m"
+# define _BLUE    "\x1b[34m"
+# define _MAGENTA "\x1b[35m"
+# define _CYAN    "\x1b[36m"
+# define _RESET   "\x1b[0m"
+
 class ClapTrap
 {
     public:
@@ -14,20 +23,21 @@ class ClapTrap
         ~ClapTrap(void);
         ClapTrap(const ClapTrap &cpy);
 
+        ClapTrap   &operator = (const ClapTrap &other);
         unsigned int rangedAttack(std::string const & target);
         unsigned int meleeAttack(std::string const & target);
         unsigned int takeDamage(unsigned int amount);
         unsigned int beRepaired(unsigned int amount);
-        int          randomBuilder();
-        std::string  randomName();
-        std::string const &getName(void);
-        unsigned int const &getHitPoints(void);
-        unsigned int const &getMaxHitPoints(void);
-        unsigned int const &getEnergyPoints(void);
-        unsigned int const &getMaxEnergyPoints(void);
-        unsigned int const &getMeelePoints(void);
-        unsigned int const &getRangedPoints(void);
-        unsigned int const &getArmorReduction(void);
+        std::string  getName(void);
+        unsigned int getMaxHitPoints(void);
+        unsigned int getHitPoints(void);
+        unsigned int getEnergyPoints(void);
+        unsigned int getMaxEnergyPoints(void);
+        unsigned int getArmorReduction(void);
+        unsigned int getMeleeAttack(void);
+        unsigned int getRangedAttack(void);
+        int          randomBuilder(void);
+        std::string  randomName(void);
 
 
     protected:
