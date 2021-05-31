@@ -21,6 +21,7 @@ class Victim
         Victim(std::string name);
         ~Victim(void);
         Victim(const Victim &cpy);
+        Victim   &operator = (const Victim &other);
 
         int                 randomBuilder() const;
         std::string         randomName();

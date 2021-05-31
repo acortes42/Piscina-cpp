@@ -49,7 +49,7 @@ Victim::Victim(std::string name)
 
 Victim::Victim(const Victim &other)
 {
-    *this = other;
+    this->name = other.name;
     return ;
 }
 
@@ -57,6 +57,12 @@ Victim::~Victim(void)
 {
     std::cout << "Victim " << this->getName() << " just died for no apparent reason!" << std::endl;
     return;
+}
+
+Victim &Victim::operator = (const Victim &other)
+{
+    this->name = other.name;
+    return (*this);
 }
 
 std::string const &Victim::getName(void) const

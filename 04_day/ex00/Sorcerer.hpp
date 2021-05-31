@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Sorcerer.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/05/31 09:52:42 by adrian            #+#    #+#             */
+/*   Updated: 2021/05/31 10:05:51 by adrian           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SORCERER_HPP
 #define SORCERER_HPP
 
@@ -12,9 +24,10 @@ class Sorcerer
         Sorcerer(std::string name, std::string title);
         ~Sorcerer(void);
         Sorcerer(const Sorcerer &cpy);
-
+        Sorcerer   &operator = (const Sorcerer &other);
+        
         std::string const   &getTitle() const;
-        virtual void polymorph(Victim const &vict) const;
+        void                polymorph(Victim const &vict) const;
         std::string         randomName();
         std::string const   &getName()const;
         int                 randomBuilder() const;;
