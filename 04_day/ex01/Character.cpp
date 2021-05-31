@@ -18,8 +18,17 @@ Character::Character(std::string const & name)
 
 Character::Character(const Character &other)
 {
-    *this = other;
-    return ;
+    this->ap = other.ap;
+    this->name = other.name;
+    this->weapon = other.weapon;
+}
+
+Character &Character::operator = (const Character &other)
+{
+    this->ap = other.ap;
+    this->name = other.name;
+    this->weapon = other.weapon;
+    return (*this);
 }
 
 Character::~Character(void)
@@ -72,10 +81,6 @@ void Character::attack(Enemy* objective)
         }
         else
             std::cout << "Insuficient AP to use the " << this->weapon->getName() << std::endl;
-    }
-    if (objective->getHP() ==0)
-    {
-        delete objective;
     }
     return ;
 }

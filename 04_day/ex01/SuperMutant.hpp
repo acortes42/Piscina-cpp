@@ -10,6 +10,7 @@ class SuperMutant: public Enemy
         SuperMutant();
         ~SuperMutant();
         SuperMutant(const SuperMutant &cpy);
+        SuperMutant &operator = (const SuperMutant &other);
 
         void takeDamage(int x);
     

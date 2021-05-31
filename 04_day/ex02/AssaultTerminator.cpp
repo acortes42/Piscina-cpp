@@ -7,8 +7,12 @@ AssaultTerminator::AssaultTerminator(void)
 
 AssaultTerminator::AssaultTerminator(const AssaultTerminator &other)
 {
-    *this = other;
     return ;
+}
+
+AssaultTerminator &AssaultTerminator::operator = (const AssaultTerminator &other)
+{
+    return (*this);
 }
 
 AssaultTerminator::~AssaultTerminator(void)

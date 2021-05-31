@@ -1,7 +1,8 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
 
-#include "iostream"
+#include <iostream>
+#include <cstring>
 #include "Enemy.hpp"
 #include "AWeapon.hpp"
 
@@ -14,6 +15,7 @@ class Character
         Character();
         ~Character();
         Character(const Character &cpy);
+        Character   &operator = (const Character &other);
 
         std::string getName() const;
         int getAP() const;

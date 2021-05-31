@@ -8,8 +8,15 @@ RadScorpion::RadScorpion(): Enemy(80, "RadScorpion")
 
 RadScorpion::RadScorpion(const RadScorpion &other) : Enemy(other)
 {
-    *this = other;
     return ;
+}
+
+RadScorpion &RadScorpion::operator = (const RadScorpion &other)
+{
+    if (this == &other)
+        return (*this);
+    Enemy::operator=(other);
+    return (*this);
 }
 
 RadScorpion::~RadScorpion(void)

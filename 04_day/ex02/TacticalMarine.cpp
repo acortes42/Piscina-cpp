@@ -13,6 +13,11 @@ TacticalMarine::TacticalMarine(const TacticalMarine &other)
     return ;
 }
 
+TacticalMarine &TacticalMarine::operator = (const TacticalMarine &other)
+{
+    return (*this);
+}
+
 TacticalMarine::~TacticalMarine()
 {
     std::cout <<  "Aaargh..." << std::endl;
@@ -37,10 +42,4 @@ void TacticalMarine::rangedAttack() const
 void TacticalMarine::meleeAttack() const
 {
     std::cout << "* attacks with a chainsword *" << std::endl;
-}
-
-TacticalMarine &TacticalMarine::operator= (const TacticalMarine &soldier)
-{
-	(void)soldier;
-	return (*this);
 }

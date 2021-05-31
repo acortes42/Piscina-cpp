@@ -10,6 +10,7 @@ class Squad: public ISquad
         Squad();
         ~Squad();
         Squad(const Squad &cpy);
+        Squad   &operator = (const Squad &other);
 
         int getCount() const;
         ISpaceMarine* getUnit(int) const;

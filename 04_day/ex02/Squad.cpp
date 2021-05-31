@@ -11,16 +11,14 @@ Squad::Squad(const Squad &other)
     return ;
 }
 
+Squad &Squad::operator = (const Squad &other)
+{
+    return (*this);
+}
+
 Squad::~Squad(void)
 {
-    unsigned long x;
-
-    x = 0;
-    while (x < this->members.size())
-    {
-        this->members[x]->~ISpaceMarine();
-        x++;
-    }
+    members.clear();
     return;
 }
         

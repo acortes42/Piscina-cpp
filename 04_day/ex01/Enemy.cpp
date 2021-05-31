@@ -1,5 +1,12 @@
 #include "Enemy.hpp"
 
+Enemy::Enemy()
+{
+    this->hp = 1;
+    this->type = "none";
+    return ;
+}
+
 Enemy::Enemy(int hp, std::string const & type)
 {
     this->hp = hp;
@@ -9,8 +16,16 @@ Enemy::Enemy(int hp, std::string const & type)
 
 Enemy::Enemy(const Enemy &other)
 {
-    *this = other;
+    this->hp = other.hp;
+    this->type = other.type;
     return ;
+}
+
+Enemy &Enemy::operator = (const Enemy &other)
+{
+    this->hp = other.hp;
+    this->type = other.type;
+    return (*this);
 }
 
 Enemy::~Enemy(void)

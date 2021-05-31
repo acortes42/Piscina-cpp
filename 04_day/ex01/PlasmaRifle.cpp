@@ -7,13 +7,20 @@ PlasmaRifle::PlasmaRifle(): AWeapon("Plasma Rifle", 5, 21)
 
 PlasmaRifle::PlasmaRifle(const PlasmaRifle &other) : AWeapon(other)
 {
-    *this = other;
     return ;
 }
 
 PlasmaRifle::~PlasmaRifle(void)
 {
     return;
+}
+
+PlasmaRifle &PlasmaRifle::operator = (const PlasmaRifle &other)
+{
+    if (this == &other)
+        return (*this);
+    AWeapon::operator=(other);
+    return (*this);
 }
 
 int PlasmaRifle::attack() const

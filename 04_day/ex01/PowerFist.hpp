@@ -11,6 +11,7 @@ class PowerFist: public AWeapon
         PowerFist();
         ~PowerFist();
         PowerFist(const PowerFist &cpy);
+        PowerFist &operator = (const PowerFist &other);
 
         int attack() const;
     

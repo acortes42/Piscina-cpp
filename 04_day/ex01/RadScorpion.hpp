@@ -10,6 +10,7 @@ class RadScorpion: public Enemy
         RadScorpion();
         ~RadScorpion();
         RadScorpion(const RadScorpion &cpy);
+        RadScorpion &operator = (const RadScorpion &other);
 
         void takeDamage(int x);
     

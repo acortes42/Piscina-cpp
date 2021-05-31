@@ -11,9 +11,9 @@ class PlasmaRifle: public AWeapon
         PlasmaRifle();
         ~PlasmaRifle();
         PlasmaRifle(const PlasmaRifle &cpy);
+        PlasmaRifle &operator = (const PlasmaRifle &other);
 
         int attack() const;
-    
 };
 
 #endif

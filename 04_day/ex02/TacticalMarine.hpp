@@ -10,8 +10,7 @@ class TacticalMarine: public ISpaceMarine
         TacticalMarine();
         ~TacticalMarine();
         TacticalMarine(const TacticalMarine &cpy);
-
-        TacticalMarine &operator= (const TacticalMarine &soldier);
+        TacticalMarine   &operator = (const TacticalMarine &other);
 
         virtual ISpaceMarine  *clone(void) const;
         void battleCry() const;

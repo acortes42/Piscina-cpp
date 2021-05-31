@@ -1,15 +1,17 @@
 #ifndef AWEAPON_HPP
 #define AWEAPON_HPP
 
-#include "iostream"
+#include <iostream>
 
 
 class AWeapon
 {
     public:
-
+        AWeapon();
         AWeapon(std::string const & name, int apcost, int damage);
         ~AWeapon();
+        AWeapon   &operator = (const AWeapon &other);
+
         AWeapon(const AWeapon &cpy);
         std::string getName() const;
         int getAPCost() const;

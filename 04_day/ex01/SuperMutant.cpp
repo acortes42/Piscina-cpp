@@ -12,6 +12,14 @@ SuperMutant::SuperMutant(const SuperMutant &other) : Enemy(other)
     return ;
 }
 
+SuperMutant &SuperMutant::operator = (const SuperMutant &other)
+{
+    if (this == &other)
+        return (*this);
+    Enemy::operator=(other);
+    return (*this);
+}
+
 SuperMutant::~SuperMutant(void)
 {
     std::cout << "Aaargh..." << std::endl;
