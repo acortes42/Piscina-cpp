@@ -6,7 +6,7 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 21:03:20 by adrian            #+#    #+#             */
-/*   Updated: 2021/05/31 21:03:28 by adrian           ###   ########.fr       */
+/*   Updated: 2021/06/13 19:49:46 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ int main()
     ISquad* vlc = new Squad;
     vlc->push(bob);
     vlc->push(jim);
-    for (int i = 0; i < vlc->getCount(); ++i)
+    ISquad* vlc2(vlc);
+    for (int i = 0; i < vlc2->getCount(); ++i)
     {
-        ISpaceMarine* cur = vlc->getUnit(i);
+        ISpaceMarine* cur = vlc2->getUnit(i);
         cur->battleCry();
         cur->rangedAttack();
         cur->meleeAttack();

@@ -9,7 +9,7 @@ class AWeapon
     public:
         AWeapon();
         AWeapon(std::string const & name, int apcost, int damage);
-        ~AWeapon();
+        virtual ~AWeapon();
         AWeapon   &operator = (const AWeapon &other);
 
         AWeapon(const AWeapon &cpy);

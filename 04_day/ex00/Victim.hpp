@@ -19,7 +19,7 @@ class Victim
 
         Victim(void);
         Victim(std::string name);
-        ~Victim(void);
+        virtual ~Victim(void);
         Victim(const Victim &cpy);
         Victim   &operator = (const Victim &other);
 

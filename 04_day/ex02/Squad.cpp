@@ -7,12 +7,15 @@ Squad::Squad(void)
 
 Squad::Squad(const Squad &other)
 {
-    *this = other;
-    return ;
+	for (int i = 0; i < other.getCount(); i++)
+		this->members.push_back(other.members[i]);
 }
 
-Squad &Squad::operator = (const Squad &other)
+Squad &Squad::operator = (Squad &other)
 {
+    members.clear();
+    for (int i = 0; i < other.members.size(); i++)
+        this->members.push_back(other.members[i]);
     return (*this);
 }
 

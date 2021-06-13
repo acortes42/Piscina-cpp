@@ -6,7 +6,7 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 10:07:41 by adrian            #+#    #+#             */
-/*   Updated: 2021/05/31 10:07:48 by adrian           ###   ########.fr       */
+/*   Updated: 2021/06/13 18:37:35 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int main()
 {
-    Sorcerer robert("Robert", "the Magnificent");
+    Sorcerer robert("robert");
     Victim jim("Jimmy");
     Peon joe("Joe");
     

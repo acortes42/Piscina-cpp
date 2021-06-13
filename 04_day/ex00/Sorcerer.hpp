@@ -6,7 +6,7 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 09:52:42 by adrian            #+#    #+#             */
-/*   Updated: 2021/05/31 10:05:51 by adrian           ###   ########.fr       */
+/*   Updated: 2021/06/13 18:36:51 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,15 @@ class Sorcerer
 {
     public:
 
-        Sorcerer(void);
         Sorcerer(std::string name);
         Sorcerer(std::string name, std::string title);
-        ~Sorcerer(void);
+        virtual ~Sorcerer(void);
         Sorcerer(const Sorcerer &cpy);
         Sorcerer   &operator = (const Sorcerer &other);
         
         std::string const   &getTitle() const;
         void                polymorph(Victim const &vict) const;
-        std::string         randomName();
         std::string const   &getName()const;
-        int                 randomBuilder() const;;
-
-
-
 
     protected:
 

@@ -6,58 +6,16 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 10:08:52 by adrian            #+#    #+#             */
-/*   Updated: 2021/05/31 10:15:27 by adrian           ###   ########.fr       */
+/*   Updated: 2021/06/13 18:36:14 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 
-int Sorcerer::randomBuilder() const
-{
-    struct timeval  tv1;
-    gettimeofday(&tv1, NULL);
-    return(tv1.tv_usec);
-}
-
-Sorcerer::Sorcerer(void)
-{
-    this->name = Sorcerer::randomName();
-    this->title = "the " + Sorcerer::randomName();
-    std::cout << "Some random Sorcerer called " << this->getName() << " " << this->getTitle() << " just appeared!" << std::endl;
-}
-
-std::string Sorcerer::randomName()
-{
-    int         n1;
-    int         n2;
-    int         n3;
-    std::string vocals;
-    std::string consonants;
-    std::string ret;
-
-    vocals = "aeiou";
-    consonants = "qwrtypsdfghjklzxcvbnm";
-    ret = "";
-    srand (randomBuilder());
-    n3 = std::rand() % 4 + 3;
-    while (n3 > 0)
-    {
-        n1 = std::rand() % vocals.length();
-        n2 = std::rand() % consonants.length();
-        if (n3 % 2 == 0)
-            ret += vocals[n1];
-        else
-            ret += consonants[n2];
-        n3--;
-    }
-    ret[0] = toupper(ret[0]);
-    return (ret);
-};
-
 Sorcerer::Sorcerer(std::string name)
 {
     this->name = name;
-    this->title = "the " + Sorcerer::randomName();
+    this->title = "the sorcerer";
     std::cout << this->name << " " << this->getTitle() << " just appeared!" << std::endl;
 }
 
