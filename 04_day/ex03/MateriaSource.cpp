@@ -15,14 +15,9 @@ MateriaSource::MateriaSource()
 
 MateriaSource::~MateriaSource()
 {   
-    int n;
-
-    n = 0;
-    while (n < 4)
-    {
-		delete this->magicSlots[n];
-        n++;
-    }
+	for (int i = 0; i < 4; i++)
+		if (this->magicSlots[i] != NULL)
+			delete this->magicSlots[i];
 }
 
 MateriaSource &MateriaSource::operator=(MateriaSource const &other)
@@ -64,7 +59,13 @@ void MateriaSource::learnMateria(AMateria *m)
 AMateria* MateriaSource::createMateria(std::string const &type)
 {
 	for (int i = 0; i < this->magicNum; i++)
-		if (this->magicSlots[i]->getType() == type)
+    {
+        std::cout << "Aqui deberia aparecer heal: " << this->magicSlots[i]->getType() << "\n";
+        if (this->magicSlots[i]->getType() == type)
+        {
 			return (this->magicSlots[i]->clone());
+        }
+        std::cout << "Aqui sigue bucle: " << i << "\n";
+    }
 	return (nullptr);
 }

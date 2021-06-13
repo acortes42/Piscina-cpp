@@ -1,9 +1,9 @@
 #include "Ice.hpp"
 
 Ice::Ice()
-{
-    return ;
-}
+:
+	AMateria("ice")
+{}
 
 Ice::~Ice()
 {

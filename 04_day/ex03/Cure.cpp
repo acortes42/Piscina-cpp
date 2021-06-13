@@ -1,9 +1,9 @@
 #include "Cure.hpp"
 
 Cure::Cure()
-{
-    return ;
-}
+:
+	AMateria("cure")
+{}
 
 Cure::~Cure()
 {

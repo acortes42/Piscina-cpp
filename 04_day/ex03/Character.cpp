@@ -20,8 +20,10 @@ Character::Character(Character const &other)
 }
 
 Character::~Character()
-{
-    return ;
+{	
+    for (int i = 0; i < 4; i++)
+		if (this->magicSlots[i] != NULL)
+			delete this->magicSlots[i];
 }
 
 Character &Character::operator=(Character const &other)
@@ -66,7 +68,6 @@ void Character::equip(AMateria* m)
     {
         if (this->magicSlots[x] == m)
         {
-            std::cout << "run away" << std::endl;
             return;
         }
         x++;
@@ -90,5 +91,6 @@ void Character::use(int idx, ICharacter& target)
 {   
     if (idx < 0 || (unsigned int)idx >= this->maxSlots || this->magicSlots[idx] == nullptr)
 		return ;
+    std::cout << this->magicSlots[idx]->getType() << std::endl;
     this->magicSlots[idx]->use(target);
 }
