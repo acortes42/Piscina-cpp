@@ -60,12 +60,10 @@ AMateria* MateriaSource::createMateria(std::string const &type)
 {
 	for (int i = 0; i < this->magicNum; i++)
     {
-        std::cout << "Aqui deberia aparecer heal: " << this->magicSlots[i]->getType() << "\n";
         if (this->magicSlots[i]->getType() == type)
         {
 			return (this->magicSlots[i]->clone());
         }
-        std::cout << "Aqui sigue bucle: " << i << "\n";
     }
 	return (nullptr);
 }

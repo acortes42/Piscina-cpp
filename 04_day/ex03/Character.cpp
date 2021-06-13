@@ -82,7 +82,11 @@ void Character::unequip(int idx)
 {
     if ((unsigned int)idx < maxSlots)
     {
-        this->magicSlots[idx] = nullptr;
+        if (this->magicSlots[idx] != nullptr)
+        {
+            delete this->magicSlots[idx];
+            this->magicSlots[idx] = nullptr;
+        }
     }
 }
 
@@ -91,6 +95,5 @@ void Character::use(int idx, ICharacter& target)
 {   
     if (idx < 0 || (unsigned int)idx >= this->maxSlots || this->magicSlots[idx] == nullptr)
 		return ;
-    std::cout << this->magicSlots[idx]->getType() << std::endl;
     this->magicSlots[idx]->use(target);
 }
