@@ -82,6 +82,8 @@ void Character::attack(Enemy* objective)
         else
             std::cout << "Insuficient AP to use the " << this->weapon->getName() << std::endl;
     }
+    else
+        std::cout << "You can't use the VATS in this case" << std::endl;
     return ;
 }
 

@@ -12,7 +12,6 @@ class Character
     public:
 
         Character(std::string const & name);
-        Character();
         virtual ~Character();
         Character(const Character &cpy);
         Character   &operator = (const Character &other);
@@ -25,7 +24,7 @@ class Character
         void attack(Enemy* objective);
     
     private:
-
+        Character();
         int             ap;
         std::string     name;
         AWeapon         *weapon;

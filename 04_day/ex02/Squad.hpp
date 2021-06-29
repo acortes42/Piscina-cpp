@@ -17,7 +17,8 @@ class Squad: public ISquad
         int push(ISpaceMarine*);
 
     private:
-        std::vector<ISpaceMarine*> members;
+       ISpaceMarine*  members[50];
+       int            count;
 };
 
 #endif

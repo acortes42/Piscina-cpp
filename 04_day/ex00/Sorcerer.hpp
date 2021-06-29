@@ -6,7 +6,7 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 09:52:42 by adrian            #+#    #+#             */
-/*   Updated: 2021/06/13 18:36:51 by adrian           ###   ########.fr       */
+/*   Updated: 2021/06/28 19:01:33 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class Sorcerer
         std::string const   &getName()const;
 
     protected:
-
+        Sorcerer();
         std::string name;
         std::string title;
 };

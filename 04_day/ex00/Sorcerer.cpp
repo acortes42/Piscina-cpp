@@ -6,11 +6,13 @@
 /*   By: adrian <adrian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/31 10:08:52 by adrian            #+#    #+#             */
-/*   Updated: 2021/06/13 18:36:14 by adrian           ###   ########.fr       */
+/*   Updated: 2021/06/28 19:02:12 by adrian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
+
+Sorcerer::Sorcerer(){return ;}
 
 Sorcerer::Sorcerer(std::string name)
 {

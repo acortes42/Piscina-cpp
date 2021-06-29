@@ -48,6 +48,9 @@ void Enemy::takeDamage(int x)
     if (this->hp >= x)
         this->hp -= x;
     else if (this->hp < x)
+    {
+        std::cout << "The enemy is dead" << std::endl;
         this->hp = 0;
+    } 
     return ;   
 }

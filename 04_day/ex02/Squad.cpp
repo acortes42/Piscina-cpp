@@ -2,32 +2,45 @@
 
 Squad::Squad(void)
 {
+    this->count = 0;
     return;
 }
 
 Squad::Squad(const Squad &other)
 {
+    this->count = 0;
 	for (int i = 0; i < other.getCount(); i++)
-		this->members.push_back(other.members[i]);
+		this->push(other.getUnit(i)->clone());
 }
 
 Squad &Squad::operator = (Squad &other)
 {
-    members.clear();
-    for (int i = 0; i < other.members.size(); i++)
-        this->members.push_back(other.members[i]);
+    if (this->getCount())
+	{
+		for (int i = 0; i < this->getCount(); i++)
+			delete (this->members[i]);
+	}
+    this->count = other.count;
+    for (int i = 0; i < other.getCount(); i++)
+        this->members[i] = other.members[i];
     return (*this);
 }
 
-Squad::~Squad(void)
+Squad::~Squad() 
 {
-    members.clear();
-    return;
+	if (this->members)
+	{
+		for (int i = 0; i < this->count; i++)
+        {
+            std::cout << "Wololo " << i << std::endl;
+			delete this->members[i];
+        }
+	}
 }
         
 int Squad::getCount() const
 {
-    return(this->members.size());
+    return(this->count);
 }
 
 ISpaceMarine* Squad::getUnit(int n) const
@@ -41,6 +54,17 @@ ISpaceMarine* Squad::getUnit(int n) const
 
 int Squad::push(ISpaceMarine* soldier)
 {
-    this->members.push_back(soldier);
-    return (this->getCount());
+    if (!soldier || this->count > 49)
+        return (this->count);
+    if (this->members)
+   {
+		this->members[this->count] = soldier;
+		this->count++;
+    }
+    else
+    {
+		this->members[0] = soldier;
+		this->count = 1;
+    }
+	return (this->count);
 }

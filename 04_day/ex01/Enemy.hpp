@@ -7,7 +7,7 @@
 class Enemy
 {
     public:
-        Enemy();
+        
         Enemy(int hp, std::string const & type);
         virtual ~Enemy();
         Enemy(const Enemy &cpy);
@@ -21,6 +21,7 @@ class Enemy
     
     private:
 
+        Enemy();
         int             hp;
         std::string     type;
 };
