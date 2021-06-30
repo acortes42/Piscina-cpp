@@ -1,5 +1,5 @@
 SRCS			= Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp main.cpp \
-				 	PresidentialPardonForm.cpp
+				 	PresidentialPardonForm.cpp Intern.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
