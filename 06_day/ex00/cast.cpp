@@ -1,6 +1,5 @@
 #include "cast.hpp"
 
-
 Cast::Cast(){}
 Cast::~Cast(){}
 Cast::Cast(const Cast &cpy){*this = cpy;}
@@ -105,7 +104,6 @@ void 		Cast::toFloat(float f)
 		std::cout << "float: impossible"<< std::endl;
 	}
 }
-
 
 std::ostream &operator<<(std::ostream &os, Cast const &arg)
 {
