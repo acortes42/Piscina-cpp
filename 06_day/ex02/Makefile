@@ -1,4 +1,4 @@
-SRCS			= serialize.cpp main.cpp
+SRCS			= Base.cpp includes.cpp main.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -8,7 +8,7 @@ RM 				= rm -f
 
 FLAGS 			= -Wall -Wextra -Werror #-fsanitize=address  -I.
 
-NAME			= cast
+NAME			= base
 
 all:			$(NAME)
 

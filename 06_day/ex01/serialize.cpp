@@ -10,27 +10,24 @@ int random_rand(void)
 void *serialize(void)
 {
     int         x;
-    char        *str = new char[20];
+    Data *data = new Data;
     std::string chars = "abcdefghijklmopqrstuvxyzABCDEFGHIJKLMOPQRSTUVXYZ";
     
     srand (random_rand());
     for (int i = 0; i < 8 ; i++)
-    {
-        int tmp = static_cast<int>(std::rand() % 47);
-        str[i] = chars[tmp];
-    }
-    *reinterpret_cast<int*>(str + 10) = rand() % 1000000;
+        data->s1 += chars[static_cast<int>(std::rand() % 47)];
+    data->x = static_cast<int>(std::rand() % 8000);
     for (int i = 0; i < 8 ; i++)
-        str[i + 12] = chars[std::rand() % 47];
-    return (str);
+        data->s2 += chars[std::rand() % 47];
+    return (data);
 }
 
 Data *      deserialize(void * str)
 {
 	Data *ret = new Data;
 
-	ret->s1 = std::string(reinterpret_cast<char *>(str), 8);
-	ret->x = *(reinterpret_cast<int *>(str) + sizeof(int));
-	ret->s2 = std::string(reinterpret_cast<char *>(str) + (sizeof(char*) + sizeof(int)), 8);
+	ret->s1 = std::string(reinterpret_cast<char *> (str) + 16, 8);
+	ret->x = *(reinterpret_cast<int *>(str) + 8);
+	ret->s2 = std::string(reinterpret_cast<char *>(str) + 56, 8);
 	return (ret);
 }
