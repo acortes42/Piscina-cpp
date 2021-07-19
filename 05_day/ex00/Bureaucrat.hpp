@@ -1,5 +1,5 @@
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef SPAN_HPP
+#define SPAN_HPP
 
 # include <iostream>
 # include <string>

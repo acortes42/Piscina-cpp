@@ -6,9 +6,9 @@ COMP			= clang++
 
 RM 				= rm -f
 
-FLAGS 			= -Wall -Wextra -Werror #-fsanitize=address  -I.
+FLAGS 			= -Wall -Wextra -Werror -fsanitize=address  -I.
 
-NAME			= base
+NAME			= easy
 
 all:			$(NAME)
 

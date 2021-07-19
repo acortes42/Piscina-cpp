@@ -89,7 +89,7 @@ int main()
     std::cout << "strings : "<< strings[0] << " "<< strings[3] << " "<< strings[4]<< std::endl;
     try
     {
-        std::cout << "fuera de rango " << strings[99] << std::endl;
+        std::cout << strings[99] << std::endl;
     }
     catch(const std::exception& e)
 	{
