@@ -1,4 +1,4 @@
-SRCS			= main.cpp span.cpp
+SRCS			= main.cpp mutantstack.cpp
 
 OBJS			= $(SRCS:.cpp=.o)
 
@@ -8,7 +8,7 @@ RM 				= rm -f
 
 FLAGS 			= -Wall -Wextra -Werror -fsanitize=address  -I.
 
-NAME			= base
+NAME			= mutant
 
 all:			$(NAME)
 

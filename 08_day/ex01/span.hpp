@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <vector>
+#include <stdlib.h>
+
 
 class Span
 {
@@ -10,18 +12,25 @@ class Span
 
         Span(int x);
         Span(const Span &cpy);
-        ~Span()
+        virtual ~Span();
     
         Span &operator = (const Span &cpy);
         void addNumber(int x);
         void addNumber(int x, int y);
         int  shortestSpan();
         int  longestSpan();
+        class outOfLimits : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 
     private:
         Span();
-        vector <int>    vect;
-        int             empty_space;
-}
+        std::vector <int> vect;
+        int  empty_space;
+};
+
+std::ostream &operator<<(std::ostream &os, Span const &arg);
 
 #endif
