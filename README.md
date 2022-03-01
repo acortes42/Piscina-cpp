@@ -1,3 +1,3 @@
 # Piscina-cpp
 
-Code in progress, don't use this for now 
+Collection of different exercices in C++
